@@ -11,7 +11,22 @@ function App() {
     formState: { errors , isSubmitting },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async (data) => {
+    try {
+      let r = await fetch("http://localhost:3000/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+      let res = await r.text();
+      console.log(data, res);
+    } catch (err) {
+      console.error("Fetch error:", err);
+    }
+  }
+  
   return (
     <>
     <div className="container">

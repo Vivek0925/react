@@ -1,6 +1,6 @@
 import React from 'react'
 
-const page = () => {
+const about = () => {
   return (
     <div>
       <h1>About Us</h1>
@@ -9,4 +9,10 @@ const page = () => {
   )
 }
 
-export default page
+export default about;
+
+// Metadata for the about page (SEO)
+export const metadata = {
+    title: "About Us - Create Next App",
+    description: "Learn more about our company and values.",
+};

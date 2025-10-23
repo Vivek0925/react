@@ -1,13 +1,8 @@
 import React from "react";
-import fs from "fs/promises"; 
+import {submitAction} from "@/actions/form"
 export default function Home() {
 
-  const submitAction = async (e)=>{
-    'use server'
-    console.log(e.get("name") ,e.get("email"))
-    fs.writeFile('data.txt', `name: ${e.get('name')}, email: ${e.get('email')}\n`, {flag: 'a+'})
-    console.log('form submitted')
-  }
+ 
 
 
   return (
